@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 1</title>
+  <link rel="stylesheet" href="./exercicio-1.css">
+</head>
+
+<body>
+  <header>
+    <h1>Exercício 1</h1>
+  </header>
+  <div class="container">
+    <h2>Escalar Jogador</h2>
+    <div class="et-container">
+      <form id="et-add-form">
+        <label for="et-nome">Nome do Jogador</label>
+        <input id="et-nome" type="text" placeholder="Nome" required>
+        <label for="et-posicao">Posição</label>
+        <input id="et-posicao" type="text" placeholder="Goleiro" required>
+        <label for="et-posicao">Número da Camisa</label>
+        <input id="et-camisa" type="text" placeholder="16" required>
+        <button type="submit">Escalar</button>
+      </form>
+
+      <h2>Remover Jogador</h2>
+      <form id="et-rmv-form">
+        <label for="et-posicao">Número da Camisa</label>
+        <input id="et-camisa" type="text" placeholder="16" required>
+        <button type="submit">Remover</button>
+      </form>
+    </div>
+
+    <h2>Escalação</h2>
+    <div class="escalacao-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Posição</th>
+            <th>Camisa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Davis</td>
+            <td>Atacante</td>
+            <td>10</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <a class="btn-voltar" href="../index.html">voltar</a>
+  </div>
+
+
+  <script src="./exercicio-1.js"></script>
+</body>
+
+</html>
