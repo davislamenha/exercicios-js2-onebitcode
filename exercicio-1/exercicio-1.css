@@ -1,0 +1,136 @@
+/* == RESET == */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* == GERAL == */
+body {
+  background-color: #bfbdbe;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  width: min(100% - 30px, 1300px);
+  margin-inline: auto;
+}
+
+h2 {
+  margin-bottom: 8px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: #5b89a6;
+  color: #ecf0f1;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.3s all;
+}
+
+button:hover {
+  background-color: #568fcc;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+input {
+  border: none;
+  border-left: 5px solid #568fcc;
+  padding: 5px;
+  font-size: 18px;
+  transition: 0.3s all;
+  margin-bottom: 8px;
+}
+
+input:focus {
+  outline: none;
+  border-left-color: #5b89a6;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 350px);
+  margin-bottom: 20px;
+}
+
+/* == HEADER == */
+header {
+  background-color: #5b89a6;
+  padding-block: 12px;
+  margin-bottom: 80px;
+}
+
+header h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* == CONTAINER DOS FORMULARIOS== */
+.et-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.titulo-1,
+.form-1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.titulo-2,
+.form-2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.btn-rmv {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.btn-rmv:hover {
+  background-color: #c0392b;
+}
+
+/* == TABELA DE ESCALAÇÃO == */
+table {
+  background-color: #ecf0f1;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+thead {
+  background-color: #2a3340;
+  color: #ecf0f1;
+}
+td,
+th {
+  border: 1px solid #2c3e50;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #bdc3c7;
+}
+
+.btn-voltar {
+  display: inline-block;
+  background-color: #2a3340;
+  color: #ecf0f1;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+
+.btn-voltar:hover {
+  background-color: #5b89ff;
+}
