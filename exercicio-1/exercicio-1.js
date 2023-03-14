@@ -8,7 +8,7 @@ function escalarJogador(e) {
   const posicao = document.getElementById('et-posicao');
   const camisa = document.getElementById('et-camisa');
 
-  if (confimarJogador(nome, posicao, camisa)) {
+  if (confimarJogador(nome.value, posicao.value, camisa.value)) {
     adicionarJogador(nome, posicao, camisa);
     limparCampos([nome, posicao, camisa]);
   } else alert('Operação cancelada!');
@@ -16,10 +16,11 @@ function escalarJogador(e) {
 
 function confimarJogador(nome, posicao, camisa) {
   return confirm(`
-  Deseja escalar este jogador? (Clique em Ok para Escalar)
-  Nome: ${nome.value}
-  Posição: ${posicao.value}
-  Número da Camisa: ${camisa.value}
+  Confirme as informações do jogador:
+   
+  Nome: ${nome}
+  Posição: ${posicao}
+  Número da Camisa: ${camisa}
 `);
 }
 
@@ -57,7 +58,15 @@ function removerJogador(e) {
 function removerLinha(camisa) {
   const linha = document.getElementById(`camisa-${camisa.value}`);
   if (linha) {
-    linha.remove();
-    limparCampos([camisa]);
+    if (
+      confimarJogador(
+        linha.childNodes[0].innerText,
+        linha.childNodes[1].innerText,
+        linha.childNodes[2].innerText,
+      )
+    ) {
+      linha.remove();
+      limparCampos([camisa]);
+    } else alert('Operação cancelada!');
   } else alert(`A camisa ${camisa.value} ainda não foi escalada!`);
 }
