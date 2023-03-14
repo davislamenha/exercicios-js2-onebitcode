@@ -43,3 +43,21 @@ function limparCampos(campos) {
     campo.value = '';
   }
 }
+
+const form2 = document.getElementById('form-2');
+
+form2.addEventListener('submit', removerJogador);
+
+function removerJogador(e) {
+  e.preventDefault();
+  const camisa = document.getElementById('et-camisa-2');
+  removerLinha(camisa);
+}
+
+function removerLinha(camisa) {
+  const linha = document.getElementById(`camisa-${camisa.value}`);
+  if (linha) {
+    linha.remove();
+    limparCampos([camisa]);
+  } else alert(`A camisa ${camisa.value} ainda não foi escalada!`);
+}
