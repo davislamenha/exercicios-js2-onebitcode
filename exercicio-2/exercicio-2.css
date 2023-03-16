@@ -1,0 +1,184 @@
+/* == RESET == */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* == GERAL == */
+body {
+  background-color: #bfbdbe;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  width: min(100% - 30px, 1300px);
+  margin-inline: auto;
+}
+
+h2,
+h3,
+h4,
+p {
+  margin-bottom: 8px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #5b89a6;
+  color: #ecf0f1;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.3s all;
+  margin-bottom: 12px;
+}
+
+button:hover {
+  background-color: #568fcc;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+input {
+  border: none;
+  border-left: 5px solid #568fcc;
+  padding: 5px;
+  font-size: 18px;
+  transition: 0.3s all;
+  margin-bottom: 12px;
+}
+
+input:focus {
+  outline: none;
+  border-left-color: #5b89a6;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 350px);
+  margin-bottom: 20px;
+}
+
+.cd-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* == HEADER == */
+header {
+  background-color: #5b89a6;
+  padding-block: 12px;
+  margin-bottom: 80px;
+}
+
+header h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* == FORMULARIO== */
+
+.form1-tec-container {
+  width: 80vw;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-block: 6px 18px;
+}
+
+.tec {
+  width: min(100%, 350px);
+  background-color: #ecf0f1;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.btn-adc {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.btn-adc:hover {
+  background-color: #27ae60;
+}
+
+.btn-rmv {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.btn-rmv:hover {
+  background-color: #c0392b;
+}
+
+/* == DEVS CADASTRADOS == */
+.devs-cadastrados-container {
+  margin-bottom: 18px;
+}
+
+.dev {
+  margin-bottom: 20px;
+}
+
+.dev > p {
+  font-size: 20px;
+}
+
+.dev > p .dev-nome {
+  font-weight: bold;
+  color: #0a3d62;
+}
+
+.dev .dev-tecs {
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.dev .tec-nome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #3c6382;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.dev .tec-exp {
+  background-color: #0a3d62;
+  padding-right: 6px;
+  padding-block: 8px;
+}
+
+.dev .tec-nome,
+.dev .tec-exp {
+  color: #ecf0f1;
+  border-radius: 5px;
+  padding-left: 6px;
+}
+
+.btn-voltar {
+  display: inline-block;
+  background-color: #2a3340;
+  color: #ecf0f1;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  text-decoration: none;
+  transition: 0.3s all;
+  border-radius: 5px;
+}
+
+.btn-voltar:hover {
+  background-color: #5b89ff;
+}
