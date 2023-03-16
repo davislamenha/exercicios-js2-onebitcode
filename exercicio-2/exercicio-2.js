@@ -5,15 +5,45 @@ form1.addEventListener('submit', cadastrarDev);
 function cadastrarDev(e) {
   e.preventDefault();
   const nome = document.getElementById('cd-nome');
+  const tecContainer = document.querySelector('.form1-tec-container');
+  const tecnologias = pegarTecnologias();
+  const devContainer = document.querySelector('.devs-cadastrados-container');
+
+  devContainer.innerHTML += `
+  <div class="dev">
+  <p>Nome: <span class="dev-nome">${nome.value}</span></p>
+  <h3>Tecnologias</h3>
+  <div class="dev-tecs"> 
+    ${inserirTecnologias(tecnologias)}
+  </div>
+</div>
+  `;
+
+  nome.value = '';
+  tecContainer.innerHTML = '';
 }
 
-function adcionarDev() {}
+function pegarTecnologias() {
+  let tecArray = [];
+  const tecnologias = document.querySelectorAll('.tec');
+  tecnologias.forEach((tecnologia) => {
+    const id = tecnologia.id;
+    const tecNome = document.getElementById(`cd-${id}-nome`).value;
+    const tecExp = document.querySelector(
+      `input[name="${id}-exp"]:checked`,
+    ).value;
+    tecArray.push({ nome: tecNome, experiencia: tecExp });
+  });
+  return tecArray;
+}
 
-function limparCampos(campos) {
-  for (let i = 0; i < campos.length; i++) {
-    const campo = campos[i];
-    campo.value = '';
+function inserirTecnologias(tecnologiasArray) {
+  let tecnologiasString = '';
+  for (let i = 0; i < tecnologiasArray.length; i++) {
+    const tecnologia = tecnologiasArray[i];
+    tecnologiasString += `<p class="tec-nome">${tecnologia.nome}<span class="tec-exp">${tecnologia.experiencia}</span></p>`;
   }
+  return tecnologiasString;
 }
 
 // ADCIONAR TECNOLOGIA
@@ -33,8 +63,8 @@ function adicionarTec() {
   <input id="cd-tec${tecId}-nome" type="text" placeholder="HTML" required>
   <p>Tempo de Experiência</p>
   <div class="radio-container">
-    <input id="cd-tec${tecId}-exp-op${tecId}" type="radio" name="tec${tecId}-exp" value="1 a 2 Anos" required>
-    <label for="cd-tec${tecId}-exp-op${tecId}">${tecId} a 2 Anos</label>
+    <input id="cd-tec${tecId}-exp-op1" type="radio" name="tec${tecId}-exp" value="1 a 2 Anos" required>
+    <label for="cd-tec${tecId}-exp-op1">1 a 2 Anos</label>
   </div>
   <div class="radio-container">
     <input id="cd-tec${tecId}-exp-op2" type="radio" name="tec${tecId}-exp" value="3 a 4 Anos" required>
