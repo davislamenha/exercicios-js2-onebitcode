@@ -172,6 +172,7 @@ header h1 {
   padding: 5px 20px;
   text-decoration: none;
   transition: 0.3s all;
+  border-radius: 5px;
 }
 
 .btn-voltar:hover {
