@@ -1,3 +1,21 @@
+const form1 = document.getElementById('form-1');
+
+form1.addEventListener('submit', cadastrarDev);
+
+function cadastrarDev(e) {
+  e.preventDefault();
+  const nome = document.getElementById('cd-nome');
+}
+
+function adcionarDev() {}
+
+function limparCampos(campos) {
+  for (let i = 0; i < campos.length; i++) {
+    const campo = campos[i];
+    campo.value = '';
+  }
+}
+
 // ADCIONAR TECNOLOGIA
 const btnAdcTec = document.querySelector('.btn-adc');
 
@@ -10,7 +28,7 @@ function adicionarTec() {
 
   tecContainer.innerHTML += `
   <div class="tec" id="tec${tecId}">
-  <h4>Tecnologia ${tecId}</h4>
+  <h4>Tecnologia</h4>
   <label for="cd-tec${tecId}-nome">Nome</label>
   <input id="cd-tec${tecId}-nome" type="text" placeholder="HTML" required>
   <p>Tempo de Experiência</p>
@@ -26,7 +44,7 @@ function adicionarTec() {
     <input id="cd-tec${tecId}-exp-op3" type="radio" name="tec${tecId}-exp" value="Mais de 5 Anos" required>
     <label for="cd-tec${tecId}-exp-op3">Mais de 5 Anos</label>
   </div>
-  <button class="btn-rmv" type="button">Remover Tecnologia</button>
+  <button class="btn-rmv" id="btn-rmv-tec${tecId}" type="button">Remover Tecnologia</button>
 </div>
   `;
 
@@ -35,11 +53,15 @@ function adicionarTec() {
 
 // REMOVER TECNOLOGIA
 function atualizarBtnRmv() {
-  const btnRmvTec = document.querySelector('.btn-rmv');
+  const btnRmvTec = document.querySelectorAll('.btn-rmv');
 
-  btnRmvTec.addEventListener('click', removerTec);
+  btnRmvTec.forEach((btn) => {
+    btn.addEventListener('click', removerTec);
+  });
 }
 
 function removerTec() {
-  this.parentNode.remove();
+  const tecId = this.id.replace('btn-rmv-', '');
+  const tecnologia = document.getElementById(`${tecId}`);
+  tecnologia.remove();
 }
