@@ -135,14 +135,14 @@ header h1 {
   color: #0a3d62;
 }
 
-.dev-tecs {
+.dev .dev-tecs {
   width: 80vw;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-.tec-nome {
+.dev .tec-nome {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -151,14 +151,14 @@ header h1 {
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.tec-exp {
+.dev .tec-exp {
   background-color: #0a3d62;
   padding-right: 6px;
   padding-block: 8px;
 }
 
-.tec-nome,
-.tec-exp {
+.dev .tec-nome,
+.dev .tec-exp {
   color: #ecf0f1;
   border-radius: 5px;
   padding-left: 6px;
