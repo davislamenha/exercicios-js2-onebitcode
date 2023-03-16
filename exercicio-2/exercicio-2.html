@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 2</title>
+  <link rel="stylesheet" href="./exercicio-2.css">
+</head>
+
+<body>
+  <header>
+    <h1>Exercício 2</h1>
+  </header>
+  <div class="container">
+
+    <div class="cd-container">
+      <h2 class="titulo-1">Cadastro de Devs</h2>
+      <form id="form-1">
+        <label for="cd-nome">Nome Completo</label>
+        <input id="cd-nome" type="text" placeholder="Nome" required>
+        <h3>Tecnologias</h3>
+        <button class="btn-adc-tec" type="button">Adicionar Tecnologia</button>
+        <div class="form1-tec-container">
+          <div class="tec" id="tec1">
+            <h4>Tecnologia 1</h4>
+            <label for="cd-tec1-nome">Nome</label>
+            <input id="cd-tec1-nome" type="text" placeholder="HTML" required>
+            <p>Tempo de Experiência</p>
+            <div class="radio-container">
+              <label for="cd-tec1-exp-op1">1 a 2 Anos</label>
+              <input id="cd-tec1-exp-op1" type="radio" name="tec1-exp" value="1 a 2 Anos" required>
+            </div>
+            <div class="radio-container">
+              <label for="cd-tec1-exp-op2">3 a 4 Anos</label>
+              <input id="cd-tec1-exp-op2" type="radio" name="tec1-exp" value="3 a 4 Anos" required>
+            </div>
+            <div class="radio-container">
+              <label for="cd-tec1-exp-op3">Mais de 5 Anos</label>
+              <input id="cd-tec1-exp-op3" type="radio" name="tec1-exp" value="Mais de 5 Anos" required>
+            </div>
+            <button class="btn-rmv-tec" type="button">Remover Tecnologia</button>
+          </div>
+        </div>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+
+    <h2>Devs Cadastrados</h2>
+    <div class="devs-cadastrados-container">
+      <div class="dev">
+        <p>Nome: <span class="dev-nome">Davis Lamenha Sampaio</span></p>
+        <div class="dev-tecs">
+          <span class="tec-nome">HTML<span class="tec-exp">1 a 2 Anos</span></span>
+          <span class="tec-nome">CSS<span class="tec-exp">Mais de 5 Anos</span></span>
+          <span class="tec-nome">Javascript<span class="tec-exp">2 a 4 Anos</span></span>
+        </div>
+      </div>
+    </div>
+
+
+    <a class="btn-voltar" href="../index.html">voltar</a>
+  </div>
+
+
+  <script src="./exercicio-2.js"></script>
+</body>
+
+</html>
