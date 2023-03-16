@@ -1,3 +1,4 @@
+// ADCIONAR TECNOLOGIA
 const btnAdcTec = document.querySelector('.btn-adc');
 
 btnAdcTec.addEventListener('click', adicionarTec);
@@ -28,4 +29,17 @@ function adicionarTec() {
   <button class="btn-rmv" type="button">Remover Tecnologia</button>
 </div>
   `;
+
+  atualizarBtnRmv();
+}
+
+// REMOVER TECNOLOGIA
+function atualizarBtnRmv() {
+  const btnRmvTec = document.querySelector('.btn-rmv');
+
+  btnRmvTec.addEventListener('click', removerTec);
+}
+
+function removerTec() {
+  this.parentNode.remove();
 }
