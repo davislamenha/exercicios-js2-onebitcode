@@ -56,28 +56,6 @@ function adicionarTec() {
   const qtdDeTec = document.querySelectorAll('.tec').length;
   let tecId = qtdDeTec > 0 ? qtdDeTec + 1 : 1;
 
-  tecContainer.innerHTML += `
-  <div class="tec" id="tec${tecId}">
-  <h4>Tecnologia</h4>
-  <label for="cd-tec${tecId}-nome">Nome</label>
-  <input id="cd-tec${tecId}-nome" type="text" placeholder="HTML" required>
-  <p>Tempo de Experiência</p>
-  <div class="radio-container">
-    <input id="cd-tec${tecId}-exp-op1" type="radio" name="tec${tecId}-exp" value="1 a 2 Anos" required>
-    <label for="cd-tec${tecId}-exp-op1">1 a 2 Anos</label>
-  </div>
-  <div class="radio-container">
-    <input id="cd-tec${tecId}-exp-op2" type="radio" name="tec${tecId}-exp" value="3 a 4 Anos" required>
-    <label for="cd-tec${tecId}-exp-op2">3 a 4 Anos</label>
-  </div>
-  <div class="radio-container">
-    <input id="cd-tec${tecId}-exp-op3" type="radio" name="tec${tecId}-exp" value="Mais de 5 Anos" required>
-    <label for="cd-tec${tecId}-exp-op3">Mais de 5 Anos</label>
-  </div>
-  <button class="btn-rmv" id="btn-rmv-tec${tecId}" type="button">Remover Tecnologia</button>
-</div>
-  `;
-
   atualizarBtnRmv();
 }
 
@@ -94,4 +72,14 @@ function removerTec() {
   const tecId = this.id.replace('btn-rmv-', '');
   const tecnologia = document.getElementById(`${tecId}`);
   tecnologia.remove();
+}
+
+// CRIAR ELEMENTOS
+
+function criarElemento(elemento, atributos) {
+  const el = document.createElement(elemento);
+  for (const atributo in atributos) {
+    el[atributo] = atributos[atributo];
+  }
+  return el;
 }
