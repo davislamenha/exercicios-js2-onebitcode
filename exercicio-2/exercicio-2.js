@@ -6,24 +6,31 @@ function cadastrarDev(e) {
   e.preventDefault();
   const nome = document.getElementById('cd-nome');
   const tecContainer = document.querySelector('.form1-tec-container');
-  const tecnologias = pegarTecnologias();
+  const tecnologias = criarArrayDeTecnologias();
   const devContainer = document.querySelector('.devs-cadastrados-container');
 
-  devContainer.innerHTML += `
-  <div class="dev">
-  <p>Nome: <span class="dev-nome">${nome.value}</span></p>
-  <h3>Tecnologias</h3>
-  <div class="dev-tecs"> 
-    ${inserirTecnologias(tecnologias)}
-  </div>
-</div>
-  `;
+  const divDev = criarElemento('div', { classList: 'dev' });
+
+  const devNomeP = criarElemento('p', { innerText: 'Nome: ' });
+  const devNomeSpan = criarElemento('span', {
+    innerText: nome.value,
+    classList: 'dev-nome',
+  });
+  devNomeP.append(devNomeSpan);
+
+  const h3Tec = criarElemento('h3', { innerText: 'Tecnologias' });
+
+  const divTecnologias = criarDivTecnologias(tecnologias);
+
+  divDev.append(devNomeP, h3Tec, divTecnologias);
+
+  devContainer.append(divDev);
 
   nome.value = '';
   tecContainer.innerHTML = '';
 }
 
-function pegarTecnologias() {
+function criarArrayDeTecnologias() {
   let tecArray = [];
   const tecnologias = document.querySelectorAll('.tec');
   tecnologias.forEach((tecnologia) => {
@@ -37,13 +44,22 @@ function pegarTecnologias() {
   return tecArray;
 }
 
-function inserirTecnologias(tecnologiasArray) {
-  let tecnologiasString = '';
+function criarDivTecnologias(tecnologiasArray) {
+  const divDevTecs = criarElemento('div', { classList: 'dev-tecs' });
   for (let i = 0; i < tecnologiasArray.length; i++) {
     const tecnologia = tecnologiasArray[i];
-    tecnologiasString += `<p class="tec-nome">${tecnologia.nome}<span class="tec-exp">${tecnologia.experiencia}</span></p>`;
+    const p = criarElemento('p', {
+      classList: 'tec-nome',
+      innerText: tecnologia.nome,
+    });
+    const span = criarElemento('span', {
+      classList: 'tec-exp',
+      innerText: tecnologia.experiencia,
+    });
+    p.append(span);
+    divDevTecs.append(p);
   }
-  return tecnologiasString;
+  return divDevTecs;
 }
 
 // ADCIONAR TECNOLOGIA
