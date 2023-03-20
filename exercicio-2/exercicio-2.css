@@ -104,6 +104,17 @@ header h1 {
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
+.radio-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+}
+
+.radio-container > input {
+  margin-bottom: 0px;
+}
+
 .btn-adc {
   background-color: #2ecc71;
   color: #fff;
@@ -116,6 +127,7 @@ header h1 {
 .btn-rmv {
   background-color: #e74c3c;
   color: #fff;
+  margin-top: 8px;
 }
 
 .btn-rmv:hover {
