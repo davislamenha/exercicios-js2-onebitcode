@@ -139,3 +139,8 @@ body {
 .board-item:hover {
   background-color: #eb4d4b;
 }
+
+.win {
+  color: #6ab04c;
+  font-size: 70px;
+}

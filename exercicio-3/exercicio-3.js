@@ -90,12 +90,18 @@ function verificarVencedorOuEmpate() {
 
     if (player1 === 3) {
       player1Placar.innerText = +player1Placar.innerText + 1;
-      alert(`${player1Nome} Ganhou!`);
-      resetarTabuleiro();
+      animacaoCasasVencedoras(combinacao);
+      setTimeout(() => {
+        alert(`${player1Nome} Ganhou!`);
+        resetarTabuleiro();
+      }, 500);
     } else if (player2 === 3) {
       player2Placar.innerText = +player2Placar.innerText + 1;
-      alert(`${player2Nome} Ganhou!`);
-      resetarTabuleiro();
+      animacaoCasasVencedoras(combinacao);
+      setTimeout(() => {
+        alert(`${player2Nome} Ganhou!`);
+        resetarTabuleiro();
+      }, 500);
     } else {
       casasDoTabuleiro.forEach((casa) => {
         if (!casa.innerText) empate++;
@@ -114,5 +120,13 @@ function verificarVencedorOuEmpate() {
 function resetarTabuleiro() {
   casasDoTabuleiro.forEach((casa) => {
     casa.innerText = '';
+    casa.classList.remove('win');
+  });
+}
+
+function animacaoCasasVencedoras(combinacao) {
+  combinacao.forEach((numeroDaCasa) => {
+    const casa = document.querySelector(`[data-board="${numeroDaCasa}"]`);
+    casa.classList.add('win');
   });
 }
