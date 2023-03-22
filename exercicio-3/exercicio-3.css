@@ -1,3 +1,4 @@
+/* == RESET == */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,6 +10,7 @@ button {
   background-color: transparent;
 }
 
+/* == GERAL == */
 body {
   background-color: #f6e58d;
   font-family: 'Courier New', Courier, monospace;
@@ -27,6 +29,7 @@ body {
   align-items: center;
 }
 
+/* == FORMULARIO == */
 .form {
   padding-block: 20px;
 }
@@ -72,8 +75,15 @@ body {
   width: 100%;
   transition: 0.5s all;
 }
+
+.btn:hover {
+  scale: 1.1;
+  background-color: #eb4d4b;
+}
+
+/* == PLACAR == */
 .score {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   gap: 60px;
   margin-block: 40px;
@@ -105,11 +115,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.btn:hover {
-  scale: 1.1;
-  background-color: #eb4d4b;
-}
-
+/* == TABULEIRO == */
 .board {
   background-color: #130f40;
   margin-top: 40px;
