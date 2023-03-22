@@ -1,6 +1,7 @@
 const formulario = document.querySelector('.form');
 const tabuleiro = document.querySelector('.board');
 const casasDoTabuleiro = document.querySelectorAll('.board-item');
+const botaoResetar = document.querySelector('.btn-reset-score');
 const combinacoesVencedor = [
   ['1', '2', '3'],
   ['4', '5', '6'],
@@ -16,6 +17,16 @@ formulario.addEventListener('submit', function (e) {
   e.preventDefault();
   iniciarPlacar();
   iniciarJogo();
+});
+
+botaoResetar.addEventListener('click', () => {
+  alert('Jogo Resetado!');
+  resetarTabuleiro();
+  const player1Placar = document.querySelector('.score-player-1');
+  const player2Placar = document.querySelector('.score-player-2');
+
+  player1Placar.innerText = 0;
+  player2Placar.innerText = 0;
 });
 
 function iniciarPlacar() {
@@ -53,10 +64,14 @@ function iniciarJogo() {
 
 function verificarVencedorOuEmpate() {
   combinacoesVencedor.forEach((combinacao) => {
-    let player1Placar = document.querySelector('.score-player-1');
-    let player1Nome = document.querySelector('.score-player-1-name').innerText;
-    let player2Placar = document.querySelector('.score-player-2');
-    let player2Nome = document.querySelector('.score-player-2-name').innerText;
+    const player1Placar = document.querySelector('.score-player-1');
+    const player1Nome = document.querySelector(
+      '.score-player-1-name',
+    ).innerText;
+    const player2Placar = document.querySelector('.score-player-2');
+    const player2Nome = document.querySelector(
+      '.score-player-2-name',
+    ).innerText;
 
     let player1 = 0;
     let player2 = 0;
