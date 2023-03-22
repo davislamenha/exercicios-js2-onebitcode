@@ -95,3 +95,9 @@ function verificarVencedorOuEmpate() {
     empate = 0;
   });
 }
+
+function resetarTabuleiro() {
+  casasDoTabuleiro.forEach((casa) => {
+    casa.innerText = '';
+  });
+}
