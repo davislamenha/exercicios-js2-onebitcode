@@ -50,3 +50,48 @@ function iniciarJogo() {
       });
     });
 }
+
+function verificarVencedorOuEmpate() {
+  combinacoesVencedor.forEach((combinacao) => {
+    let player1Placar = document.querySelector('.score-player-1');
+    let player1Nome = document.querySelector('.score-player-1-name').innerText;
+    let player2Placar = document.querySelector('.score-player-2');
+    let player2Nome = document.querySelector('.score-player-2-name').innerText;
+
+    let player1 = 0;
+    let player2 = 0;
+    let empate = 0;
+
+    combinacao.forEach((numeroDaCasa) => {
+      const casa = document.querySelector(
+        `[data-board="${numeroDaCasa}"]`,
+      ).innerText;
+      if (casa === 'O') {
+        player1++;
+      } else if (casa === 'X') {
+        player2++;
+      }
+    });
+
+    if (player1 === 3) {
+      player1Placar.innerText = +player1Placar.innerText + 1;
+      alert(`${player1Nome} Ganhou!`);
+      resetarTabuleiro();
+    } else if (player2 === 3) {
+      player2Placar.innerText = +player2Placar.innerText + 1;
+      alert(`${player2Nome} Ganhou!`);
+      resetarTabuleiro();
+    } else {
+      casasDoTabuleiro.forEach((casa) => {
+        if (!casa.innerText) empate++;
+      });
+      if (empate === 0) {
+        alert('Jogo empatado!');
+        resetarTabuleiro();
+      }
+    }
+    player1 = 0;
+    player2 = 0;
+    empate = 0;
+  });
+}
