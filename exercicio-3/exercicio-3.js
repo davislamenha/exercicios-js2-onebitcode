@@ -51,14 +51,12 @@ function iniciarJogo() {
       casa.addEventListener('click', function () {
         if (tabuleiro.dataset.turn === '1' && this.innerText === '') {
           this.innerText = 'O';
-          proximoJogador();
-          const vencedor = verificarVencedorOuEmpate();
-          console.log(vencedor);
+          jogadorDaVez('2');
+          verificarVencedorOuEmpate();
         } else if (tabuleiro.dataset.turn === '2' && this.innerText === '') {
           this.innerText = 'X';
-          proximoJogador();
-          const vencedor = verificarVencedorOuEmpate();
-          console.log(vencedor);
+          jogadorDaVez('1');
+          verificarVencedorOuEmpate();
         } else alert('Esta casa já está marcada!');
       });
     });
@@ -96,16 +94,16 @@ function verificarVencedorOuEmpate() {
       setTimeout(() => {
         alert(`${player1Nome} Ganhou!`);
         resetarTabuleiro();
+        jogadorDaVez('1');
       }, 500);
-      proximoJogador();
     } else if (player2 === 3) {
       player2Placar.innerText = +player2Placar.innerText + 1;
       animacaoCasasVencedoras(combinacao);
       setTimeout(() => {
         alert(`${player2Nome} Ganhou!`);
         resetarTabuleiro();
+        jogadorDaVez('2');
       }, 500);
-      proximoJogador();
     } else {
       casasDoTabuleiro.forEach((casa) => {
         if (!casa.innerText) empate++;
@@ -123,6 +121,7 @@ function verificarVencedorOuEmpate() {
 
 function resetarTabuleiro() {
   casasDoTabuleiro.forEach((casa) => {
+    jogadorDaVez('1');
     casa.innerText = '';
     casa.classList.remove('win');
   });
@@ -135,15 +134,15 @@ function animacaoCasasVencedoras(combinacao) {
   });
 }
 
-function proximoJogador() {
+function jogadorDaVez(jogador) {
   const player1Nome = document.querySelector('.score-player-1-name');
   const player2Nome = document.querySelector('.score-player-2-name');
 
-  if (tabuleiro.dataset.turn === '1') {
+  if (jogador === '2') {
     tabuleiro.dataset.turn = '2';
     player2Nome.classList.add('player-turn');
     player1Nome.classList.remove('player-turn');
-  } else if (tabuleiro.dataset.turn === '2') {
+  } else if (jogador === '1') {
     tabuleiro.dataset.turn = '1';
     player1Nome.classList.add('player-turn');
     player2Nome.classList.remove('player-turn');
