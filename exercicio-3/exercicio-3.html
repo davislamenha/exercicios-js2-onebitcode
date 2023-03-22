@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 3</title>
+  <link rel="stylesheet" href="./exercicio-3.css">
+</head>
+
+<body>
+  <main>
+    <h1 class="titulo">Jogo da Velha</h1>
+    <div class="container">
+      <form class="form">
+        <div class="form-control">
+          <label class="form-label" for="player-1-name">Nome do Jogador 1</label>
+          <input class="form-input" id="player-1-name" type="text" required>
+        </div>
+        <div class="form-control">
+          <label class="form-label" for="player-2-name">Nome do Jogador 2</label>
+          <input class="form-input" id="player-2-name" type="text" required>
+        </div>
+        <button type="submit" class="btn">Começar Jogo</button>
+      </form>
+
+      <div class="score">
+        <div class="score-container">
+          <span class="score-player-name score-player-1-name player-turn">Davis</span>
+          <span class="score-player score-player-1">0</span>
+        </div>
+        <div class="score-container">
+          <span class="score-player-name score-player-2-name">Maylis</span>
+          <span class="score-player score-player-2">0</span>
+        </div>
+        <button type="button" class="btn btn-reset-score">Resetar Placar</button>
+      </div>
+
+
+      <div class="board" data-turn="1" data-start="off">
+        <button class="board-item" data-board="1"></button>
+        <button class="board-item" data-board="2"></button>
+        <button class="board-item" data-board="3"></button>
+        <button class="board-item" data-board="4"></button>
+        <button class="board-item" data-board="5"></button>
+        <button class="board-item" data-board="6"></button>
+        <button class="board-item" data-board="7"></button>
+        <button class="board-item" data-board="8"></button>
+        <button class="board-item" data-board="9"></button>
+      </div>
+
+    </div>
+  </main>
+
+  <script type="text/javascript" src="./exercicio-3.js"></script>
+</body>
+
+</html>
