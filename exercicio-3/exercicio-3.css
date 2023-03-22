@@ -101,6 +101,25 @@ body {
   color: #130f40;
   font-size: 32px;
   font-weight: bold;
+  border-bottom: transparent solid 4px;
+  transition: 0.5 all;
+}
+
+.player-turn {
+  position: relative;
+  font-size: 40px;
+  color: #eb4d4b;
+  border-bottom-color: #130f40;
+  transition: 0.3s all;
+}
+
+.player-turn::before {
+  position: absolute;
+  display: block;
+  content: 'Sua vez';
+  color: #130f40;
+  font-size: 18px;
+  top: -12px;
 }
 
 .score-player {

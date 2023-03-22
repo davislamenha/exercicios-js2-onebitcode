@@ -51,12 +51,14 @@ function iniciarJogo() {
       casa.addEventListener('click', function () {
         if (tabuleiro.dataset.turn === '1' && this.innerText === '') {
           this.innerText = 'O';
-          tabuleiro.dataset.turn = '2';
-          verificarVencedorOuEmpate();
+          proximoJogador();
+          const vencedor = verificarVencedorOuEmpate();
+          console.log(vencedor);
         } else if (tabuleiro.dataset.turn === '2' && this.innerText === '') {
           this.innerText = 'X';
-          tabuleiro.dataset.turn = '1';
-          verificarVencedorOuEmpate();
+          proximoJogador();
+          const vencedor = verificarVencedorOuEmpate();
+          console.log(vencedor);
         } else alert('Esta casa já está marcada!');
       });
     });
@@ -95,6 +97,7 @@ function verificarVencedorOuEmpate() {
         alert(`${player1Nome} Ganhou!`);
         resetarTabuleiro();
       }, 500);
+      proximoJogador();
     } else if (player2 === 3) {
       player2Placar.innerText = +player2Placar.innerText + 1;
       animacaoCasasVencedoras(combinacao);
@@ -102,6 +105,7 @@ function verificarVencedorOuEmpate() {
         alert(`${player2Nome} Ganhou!`);
         resetarTabuleiro();
       }, 500);
+      proximoJogador();
     } else {
       casasDoTabuleiro.forEach((casa) => {
         if (!casa.innerText) empate++;
@@ -129,4 +133,19 @@ function animacaoCasasVencedoras(combinacao) {
     const casa = document.querySelector(`[data-board="${numeroDaCasa}"]`);
     casa.classList.add('win');
   });
+}
+
+function proximoJogador() {
+  const player1Nome = document.querySelector('.score-player-1-name');
+  const player2Nome = document.querySelector('.score-player-2-name');
+
+  if (tabuleiro.dataset.turn === '1') {
+    tabuleiro.dataset.turn = '2';
+    player2Nome.classList.add('player-turn');
+    player1Nome.classList.remove('player-turn');
+  } else if (tabuleiro.dataset.turn === '2') {
+    tabuleiro.dataset.turn = '1';
+    player1Nome.classList.add('player-turn');
+    player2Nome.classList.remove('player-turn');
+  }
 }
