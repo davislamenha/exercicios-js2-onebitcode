@@ -163,3 +163,20 @@ body {
   color: #6ab04c;
   font-size: 70px;
 }
+
+/* == BOTAO VOLTAR == */
+
+.btn-voltar {
+  display: inline-block;
+  background-color: #2a3340;
+  color: #ecf0f1;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  text-decoration: none;
+  transition: 0.3s all;
+  border-radius: 5px;
+}
+
+.btn-voltar:hover {
+  background-color: #5b89ff;
+}
