@@ -166,6 +166,8 @@ body {
 /* == BOTAO VOLTAR == */
 
 .btn-voltar {
+  position: fixed;
+  bottom: 0;
   display: inline-block;
   background-color: #2a3340;
   color: #ecf0f1;
@@ -173,7 +175,6 @@ body {
   padding: 5px 20px;
   text-decoration: none;
   transition: 0.3s all;
-  border-radius: 5px;
 }
 
 .btn-voltar:hover {
