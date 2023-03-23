@@ -107,7 +107,6 @@ body {
 
 .player-turn {
   position: relative;
-  font-size: 40px;
   color: #eb4d4b;
   border-bottom-color: #130f40;
   transition: 0.3s all;
